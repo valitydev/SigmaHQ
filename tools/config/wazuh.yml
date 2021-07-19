@@ -86,7 +86,7 @@ fieldmappings:
     Initiated:
         EventID=3: data.win.eventdata.initiated
     IntegrityLevel:
-        EventID=1: process_integrity_level
+        EventID=1: data.win.eventdata.integrityLevel
     ipAddress: dst_ip_addr
     IpAddress: src_ip_addr
     IPString: src_ip_addr
@@ -116,7 +116,7 @@ fieldmappings:
     ParentImage: data.win.eventdata.parentImage
     ParentProcessName: data.win.eventdata.parentImage
     PasswordLastSet: data.win.eventdata.passwordLastSet
-    Path: process_path
+    Path: data.win.eventdata.image
     ParentCommandLine: data.win.eventdata.parentCommandLine
     PipeName: data.win.eventdata.pipeName
     ProcessName: data.win.eventdata.processName
@@ -139,7 +139,7 @@ fieldmappings:
     Signed: data.win.eventdata.signed
     Source: data.win.eventdata.source Name
     SourceHostname: data.win.eventdata.sourceHostname
-    SourceImage: process_path
+    SourceImage: data.win.eventdata.sourceImage
     SourceIp: data.win.eventdata.sourceIp
     SourcePort: data.win.eventdata.sourcePort
     SourcePortName: data.win.eventdata.sourcePortName
@@ -164,7 +164,7 @@ fieldmappings:
     TargetObject: data.win.eventdata.targetObject
     Type:
         EventID=20: wmi_consumer_type
-    User: user_account
+    User: data.win.eventdata.user
     UserName: user_name
     Value:
       EventID=1102: dst_ip_addr
