@@ -41,7 +41,7 @@ for  rule_category in ../rules/windows/* ; do
                     #sed -i '' 's/^name: /name: Sysmon_/' "${ESALERT_HOME}"/sigma_sysmon_"$(basename "$rule")"
                     ./sigmac -t elastalert -c config/generic/windows-audit.yml -c config/wazuh.yml --backend-option timestamp_field=etl_processed_time -o ${ESALERT_HOME}/sigma_"$(basename "$rule")" "$rule"
                     #ls -la "${ESALERT_HOME}"/rules/sigma_sysmon_"$(basename "${rule}")"
-                    sed -E -i 's/^name: .{36}-(.*)/name: win_\1/1' "${ESALERT_HOME}"/sigma_$(basename "$rule") 
+                    sed -E -i 's/^name: .{36}-(.*)/name: win_\1/1' "${ESALERT_HOME}"/sigma_$(basename "$rule")
                     rule_counter=$[$rule_counter +1]
                 fi
             fi

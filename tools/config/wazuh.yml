@@ -7,32 +7,32 @@ logsources:
   windows-application:
     product: windows
     service: application
-    index: wazuh-alerts-3.x-*
+    index: wazuh-alerts-*
   windows-security:
     product: windows
     service: security
-    index: wazuh-alerts-3.x-*
+    index: wazuh-alerts-*
   windows-sysmon:
     product: windows
     service: sysmon
-    index: wazuh-alerts-3.x-*
+    index: wazuh-alerts-*
   windows-system:
     product: windows
     service: system
-    index: wazuh-alerts-3.x-*
+    index: wazuh-alerts-*
   windows-wmi:
     product: windows
     service: wmi
-    index: wazuh-alerts-3.x-*
+    index: wazuh-alerts-*
   windows-powershell:
     product: windows
     service: powershell
-    index: wazuh-alerts-3.x-*
+    index: wazuh-alerts-*
   windows-powershell-classic:
     product: windows
     service: powershell-classic
-    index: wazuh-alerts-3.x-*
-defaultindex: wazuh-alerts-3.x-*
+    index: wazuh-alerts-*
+defaultindex: wazuh-alerts-*
 fieldmappings:
     AccessMask: data.win.eventdata.accessMask
     AccountName: data.win.eventdata.accountName
