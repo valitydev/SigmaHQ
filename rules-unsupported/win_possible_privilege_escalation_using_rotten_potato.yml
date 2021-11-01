@@ -8,14 +8,14 @@ tags:
     - attack.privilege_escalation
     - attack.t1134           # an old one
     - attack.t1134.002
-status: experimental
+status: unsupported
 author: Teymur Kheirkhabarov
 date: 2019/10/26
 modified: 2020/09/01
 logsource:
     category: process_creation
     product: windows
-    definition : Works only if  Enrich Sysmon events with additional information about process in ParentUser check enrichment section
+    definition: Works only if  Enrich Sysmon events with additional information about process in ParentUser check enrichment section
 detection:
     selection:
         ParentUser:

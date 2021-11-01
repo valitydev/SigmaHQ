@@ -1,4 +1,4 @@
-title:  Elastic Auditbeat (from 7.x) index pattern and field mapping following Elastic enabled Modules
+title: Elastic Auditbeat (from 7.x) index pattern and field mapping following Elastic enabled Modules
 order: 20
 backends:
   - es-qs
@@ -11,7 +11,6 @@ backends:
   - xpack-watcher
   - elastalert
   - elastalert-dsl
-  - elasticsearch-rule
   - ee-outliers
 
 logsources:
@@ -70,7 +69,6 @@ fieldmappings:
     data: data
     default-context: default-context
     dev: dev
-    dev: dev
     device: device
     dir: dir
     direction: direction
@@ -91,7 +89,6 @@ fieldmappings:
     fe: fe
     feature: feature
     fi: fi
-    fp: fp
     fp: fp
     format: format
     fsgid: fsgid
@@ -168,7 +165,6 @@ fieldmappings:
     oflag: oflag
     ogid: ogid
     ocomm: ocomm
-    old: old
     old: old
     old-auid: old-auid
     old-chardev: old-chardev

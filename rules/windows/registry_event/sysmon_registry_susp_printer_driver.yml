@@ -7,7 +7,8 @@ references:
 author: Florian Roth
 date: 2020/07/01
 tags:
-    - cve.2021-1675
+    - attack.privilege_escalation
+    - cve.2021.1675
 logsource:
     category: registry_event
     product: windows
