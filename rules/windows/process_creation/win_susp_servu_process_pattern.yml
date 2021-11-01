@@ -10,7 +10,8 @@ logsource:
     category: process_creation
     product: windows
 tags:
-    - cve.2021-35211
+    - attack.credential_access
+    - cve.2021.35211
 detection:
     selection:
         ParentImage|endswith: '\Serv-U.exe'

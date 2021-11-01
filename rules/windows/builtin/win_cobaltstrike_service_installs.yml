@@ -4,8 +4,10 @@ description: Detects known malicious service installs that appear in cases in wh
 author: Florian Roth, Wojciech Lesicki
 references:
     - https://www.sans.org/webcasts/119395
+    - https://www.crowdstrike.com/blog/getting-the-bacon-from-cobalt-strike-beacon/
+    - https://thedfirreport.com/2021/08/29/cobalt-strike-a-defenders-guide/
 date: 2021/05/26
-modified: 2021/06/03
+modified: 2021/09/21
 tags:
     - attack.execution
     - attack.privilege_escalation
@@ -17,18 +19,22 @@ logsource:
     product: windows
     service: system
 detection:
-    selection1:
+    selection_id:
         EventID: 7045
-    selection2:
-        ServiceFileName|contains|all: 
+    selection1:
+        ImagePath|contains|all: 
             - 'ADMIN$'
             - '.exe'
-    selection3:
-        ServiceFileName|contains|all: 
+    selection2:
+        ImagePath|contains|all: 
             - '%COMSPEC%'
             - 'start'
             - 'powershell'
-    condition: selection1 and (selection2 or selection3)
+    selection3:
+        ImagePath|contains: 'powershell -nop -w hidden -encodedcommand'
+    selection4:
+        ImagePath|base64offset|contains: "IEX (New-Object Net.Webclient).DownloadString('http://127.0.0.1:"
+    condition: selection_id and (selection1 or selection2 or selection3 or selection4)
 falsepositives:
     - Unknown
 level: critical
